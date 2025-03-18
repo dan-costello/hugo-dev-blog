@@ -1,10 +1,10 @@
 ---
 date: '2025-08-18T18:00:33-04:00'
 draft: false
-title: 'Python Sets - A Reminder of their Power'
+title: 'Python Sets - The Secret to Lightning-Fast Lookups'
 ---
 
-### Lightning-Fast Lookups!
+### Reducing lookups from minutes to milliseconds
 
 Python sets are a useful alternative to lists, with their main advantage being that they only allow unique members. My most common use case is calling set() on an existing list to remove duplicates:
 
