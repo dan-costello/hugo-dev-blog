@@ -1,6 +1,6 @@
 ---
-date: '2025-08-16T14:40:33-04:00'
-draft: true
+date: '2025-08-18T18:00:33-04:00'
+draft: false
 title: 'Python Sets - A Reminder of their Power'
 ---
 
