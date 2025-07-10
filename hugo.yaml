@@ -1,6 +1,6 @@
 baseURL: https://example.org/
 languageCode: en-us
-title: My New Hugo Site
+title: Digital Reservoirs
 theme: "PaperMod"
 
 
@@ -76,12 +76,10 @@ params:
     Content: Welcome to my blog
 
   socialIcons:
-    - name: x
-      url: "https://x.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
+    - name: LinkedIn 
+      url: "https://www.linkedin.com/in/dan-costello-gso/"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/dan-costello"
 
   analytics:
     google:
