@@ -6,3 +6,5 @@ title: 'My First Post'
 
 
 # welcome to my blog
+
+Hello! My name is Dan and I've built software for everything from petrophysical well log analysis to LLM-powered chatbots. This blog will be where I'll unpack what I've learned (and what I'm still figuring out).
