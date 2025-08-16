@@ -1,5 +1,5 @@
 ---
-date: '2025-08-10T13:38:02-04:00'
+date: '2025-07-12T13:38:02-04:00'
 draft: true
 title: 'Why Tauri v2 and Red Hat don’t mix…yet'
 ---
