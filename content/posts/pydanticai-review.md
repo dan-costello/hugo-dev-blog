@@ -8,14 +8,14 @@ title: 'PydanticAI - my favorite Python library of the summer'
 
 Like many tech companies in 2025, my organization is experimenting with ways to leverage Generative AI in our offerings to customers. I am part of a small team working on these ideas - we’ve built our first cloud app, a chatbot using a RAG pipeline to assist users with using our software’s various modules, and are in the middle of making this available to clients. For our next offering, we aimed to explore “tool use” with LLMs, giving the LLM agent the ability to call selected functions to enable it to help users in a more detailed fashion.
 
-Before starting development, I took some time to review the current Python libraries for interfacing with LLMs. There are libraries available from each of the major LLM providers (Anthropic, OpenAI, etc.), but a new library named PydanticAI was now available. When I read that the team behind Pydantic was releasing a new library for interfacing with large language models, I was skeptical.  Pydantic offers a great development experience for type validation in Python, but a LLM library seemed like a big jump for them. After working with the library for a few days, I am impressed with their design choices and wish the library had been available a year ago.
+Before starting development, I took some time to review the current Python libraries for interfacing with LLMs. There are libraries available from each of the major LLM providers (Anthropic, OpenAI, etc.), but a new library named PydanticAI was now available. When I read that the team behind Pydantic was releasing a new library for interfacing with large language models, I was skeptical. Pydantic offers a great development experience for type validation in Python, but a LLM library seemed like a big jump for them. After working with the library for a few days, I am impressed with their design choices and wish the library had been available a year ago.
 
 ## Switching between Models
 When reading through the Pydantic “Getting Started” section, I was very impressed with how they’d provided access to numerous LLMs with minimal configuration.
 
 Providing the optionality to switch between various LLM providers had led to backend complexity in our chat bot application - each LLM provider has their own message structure, parameters, and API endpoints that we had to handle. 
 
-When using Pydantic AI, we can just provide a model string name. After creating the `Agent` with this parameter, we can pass messages, system prompts, and settings in a uniform method.  PydanticAI supports OpenAI and Anthropic direct connections, as well as options such as AWS Bedrock or self-hosted Ollama implementations. 
+When using Pydantic AI, we can just provide a model string name. After creating the `Agent` with this parameter, we can pass messages, system prompts, and settings in a uniform method. PydanticAI supports OpenAI and Anthropic direct connections, as well as options such as AWS Bedrock or self-hosted Ollama implementations. 
 
 Here’s an example of simplified code supporting both OpenAI and Anthropic APIs[^note]. Note that I need to use the corresponding model's SDK, and the different ways of providing system prompts.
 ```
@@ -70,7 +70,7 @@ print(result.output)
 ```
 
 ## Tool Use
-The easy method of switching between models was pleasing enough, and I was impressed even more with testing tool use. With most of the LLM SDKs, the tool use section of the agent initiation is a complex nest of JSON.  With Pydantic AI, we can simply add decorator above a function, giving the agent awareness of this tool.  We can also provide context (such as a database connection) to these tools, further empowering our LLM agents.
+The easy method of switching between models was pleasing enough, and I was impressed even more with testing tool use. With most of the LLM SDKs, the tool use section of the agent initiation is a complex nest of JSON. With Pydantic AI, we can simply add decorator above a function, giving the agent awareness of this tool. We can also provide context (such as a database connection) to these tools, further empowering our LLM agents.
 
 Here’s a comparison of tool use with the Anthropic SDK compared with Pydantic AI:
 
@@ -91,7 +91,7 @@ def get_weather(location, unit="fahrenheit"):
         "condition": "sunny"
     }
 
-# tools schema to describe avaialble functions
+# tools schema to describe available functions
 tools = [
     {
         "name": "get_weather",
@@ -148,6 +148,6 @@ The decorator design makes adding tools much more straightforward and fun - we c
 
 
 ### Onward 
-We are still early in our “tool use” era of LLM development, but it is a joy to work with Pydantic AI so we can focus on the overall program logic and user empowerment.  Using this library doesn't mean we don't need to know how to work with LLM APIs, but it removes much of the "glue code" necessary when working with other offerings.
+We are still early in our “tool use” era of LLM development, but it is a joy to work with Pydantic AI so we can focus on the overall program logic and user empowerment. Using this library doesn't mean we don't need to know how to work with LLM APIs, but it removes much of the "glue code" necessary when working with other offerings.
 
-[^note]: While writing this piece I realized that Anthropic and many other LLM providers provide OpenAI-compatible endpoints, which removes the need for the `if` logic and accomodating the various SDK languages. This would have useful to discover earlier, but good to know!
+[^note]: While writing this piece I realized that Anthropic and many other LLM providers provide OpenAI-compatible endpoints, which removes the need for the `if` logic and accommodating the various SDK languages. This would have useful to discover earlier, but good to know!
