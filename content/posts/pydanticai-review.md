@@ -1,5 +1,5 @@
 ---
-date: '2025-08-10T13:39:43-04:00'
+date: '2025-08-10T15:56:43-04:00'
 draft: true
 title: 'PydanticAI - my favorite Python library of the summer'
 ---
@@ -17,7 +17,7 @@ Providing the optionality to switch between various LLM providers had led to bac
 
 When using Pydantic AI, we can just provide a model string name. After creating the `Agent` with this parameter, we can pass messages, system prompts, and settings in a uniform method.  PydanticAI supports OpenAI and Anthropic direct connections, as well as options such as AWS Bedrock or self-hosted Ollama implementations. 
 
-Here’s an example of simplified code supporting both OpenAI and Anthropic APIs[^note]. Note the different ways of providing system prompts.
+Here’s an example of simplified code supporting both OpenAI and Anthropic APIs[^note]. Note that I need to use the corresponding model's SDK, and the different ways of providing system prompts.
 ```
 ...
 available_models = ['4o', 'sonnet3.7','qwen']
